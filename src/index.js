@@ -10,4 +10,15 @@ console.log(store.getState());
 store.dispatch({ type: "INCREMENT" }); 
 console.log(store.getState());
 
-ReactDOM.render(<App value={store.getState()} />, document.querySelector("#root"));
+let render = () => {
+    ReactDOM.render(
+        <App 
+            value={store.getState()}
+            onIncrement={() => {store.dispatch({ type: "INCREMENT" });}}
+        />, 
+        document.querySelector("#root")
+    );
+}
+
+render();
+store.subscribe(render);

@@ -7,6 +7,7 @@ export default class App extends Component {
     return ( 
       <React.Fragment>
         Click counter: {this.props.value}
+        <button onClick={this.props.onIncrement}>Click</button>
       </React.Fragment>
     )
   }
