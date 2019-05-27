@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "../assets/scss/main.scss"
+import { incrementCounter } from "../actions/index";
+import { connect } from "react-redux";
 
-export default class App extends Component {
+class App extends Component {
 
   render() {
     return ( 
@@ -13,3 +15,17 @@ export default class App extends Component {
   }
 
 }
+
+let mapStateToProps = function(state) {
+  return {
+      value: state
+  }
+}
+
+let mapDispatchToProps = {
+  onIncrement: incrementCounter
+}
+
+let AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default AppContainer;
