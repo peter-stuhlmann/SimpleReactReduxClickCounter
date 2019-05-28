@@ -17,10 +17,15 @@ class App extends Component {
         </MetaTags>
 
         <h1>Click counter</h1>
-        <button className="decrement" onClick={this.props.onDecrement}>-</button>
-        <span className="count">{this.props.value}</span>
-        <button className="increment" onClick={this.props.onIncrement}>+</button>
-        <button className="reset" onClick={this.props.onReset}>Reset</button>
+        <div>
+          <button className="decrement" onClick={this.props.onDecrement}>-</button>
+          <span className="count">{this.props.count}</span>
+          <button className="increment" onClick={this.props.onIncrement}>+</button>
+          <button className="reset" onClick={this.props.onReset}>Reset</button>
+        </div>
+        <div className="total">
+          <span className="count">{this.props.click} clicks</span>
+        </div>
       </React.Fragment>
     )
   }
@@ -29,7 +34,8 @@ class App extends Component {
 
 let mapStateToProps = function(state) {
   return {
-      value: state
+    count: state.count,
+    click: state.click
   }
 }
 
