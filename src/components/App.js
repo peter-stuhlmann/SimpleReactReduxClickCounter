@@ -9,10 +9,10 @@ class App extends Component {
     return ( 
       <React.Fragment>
         <h1>Click counter</h1>
-        <button onClick={this.props.onDecrement}>-</button>
+        <button className="decrement" onClick={this.props.onDecrement}>-</button>
         <span className="count">{this.props.value}</span>
-        <button onClick={this.props.onIncrement}>+</button>
-        <button onClick={this.props.onReset}>Reset</button>
+        <button className="increment" onClick={this.props.onIncrement}>+</button>
+        <button className="reset" onClick={this.props.onReset}>Reset</button>
       </React.Fragment>
     )
   }
