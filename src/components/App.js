@@ -8,9 +8,10 @@ class App extends Component {
   render() {
     return ( 
       <React.Fragment>
-        Click counter: {this.props.value}
-        <button onClick={this.props.onIncrement}>+</button>
+        <h1>Click counter</h1>
         <button onClick={this.props.onDecrement}>-</button>
+        <span className="count">{this.props.value}</span>
+        <button onClick={this.props.onIncrement}>+</button>
       </React.Fragment>
     )
   }
