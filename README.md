@@ -7,7 +7,10 @@
 
 ---
 > Simple example for a click counter built with Redux in React.
----
+
+<p align="center">
+    <img src="preview.png">
+</p>
 
 ## Used
 
