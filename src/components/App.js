@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "../assets/scss/main.scss"
+import "../assets/scss/main.scss";
+import MetaTags from 'react-meta-tags';
 import { incrementCounter, decrementCounter, resetCounter } from "../actions/index";
 import { connect } from "react-redux";
 
@@ -8,6 +9,13 @@ class App extends Component {
   render() {
     return ( 
       <React.Fragment>
+
+        <MetaTags>
+          <title>Click Counter | Peter R. Stuhlmann web development</title>
+          <link rel="icon" type="image/png" href={require("../assets/img/favicon.png")} />
+          <meta name="description" content="Simple example for a click counter (increment, decrement, reset) built with Redux in React by Peter R. Stuhlmann." />
+        </MetaTags>
+
         <h1>Click counter</h1>
         <button className="decrement" onClick={this.props.onDecrement}>-</button>
         <span className="count">{this.props.value}</span>
